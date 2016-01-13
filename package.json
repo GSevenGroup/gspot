@@ -1,0 +1,22 @@
+{
+  "name": "gsevengroup",
+  "version": "1.0.0",
+  "description": "GSeven (tm) Webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSevenGroup/gspot.git"
+  },
+  "author": "Lassu Henrik,Fogt Tamas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSevenGroup/gspot/issues"
+  },
+  "homepage": "https://github.com/GSevenGroup/gspot#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
