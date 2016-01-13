@@ -1,7 +1,7 @@
 var gulp = require('gulp');
-var sass = require('sass');
+var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
-var useref = require('gulp-require');
+var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
@@ -26,6 +26,14 @@ gulp.task('sass', function () {
 			stream: true
 		}));
 });
+
+/**
+ * copying all the fonts to dist
+ */
+gulp.task('fonts', function() {
+	return gulp.src('app/fonts/**/*')
+		.pipe(gulp.dest('dist/fonts'))
+})
 
 /**
  * optimalizes all the img files and copies them to dev
@@ -72,7 +80,7 @@ gulp.task('browserSync', function () {
 /**
  * grouping of all watch tasks
 */
-gulp.task('watch', ['browseSync', 'sass'], function () {
+gulp.task('watch', ['browserSync', 'sass'], function () {
 	gulp.watch('app/scss/**/*.scss', ['sass']);
 	gulp.watch('app/**/*.html', browserSync.reload);
 	gulp.watch('app/js/**/*.js', browserSync.reload);
@@ -90,6 +98,6 @@ gulp.task('build', function (callback) {
 
 gulp.task('startdev', function (callback) {
 	runSequence(['sass','browserSync', 'watch'],
-		callbacks
+		callback
 	)
 });
