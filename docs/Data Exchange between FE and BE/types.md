@@ -49,13 +49,26 @@
 | User Level | level | The level where the user is |
 | User Type  | type | This is for differentiating the prganization and personal members |
 | Leader ID | leaderId | This should only have value if user is a leader |
-| Employee ID | employeeId | This should only have value if the user is the emplyee of the company |
+| Employee ID | employeeId | This should only have value if the user is the employee of the company |
 | Language | lang | the preferred language of the user |
 
+###User Levels
 | Levels: | Description |
 | :---:   | ----------- |
 | 0 | User is a free account |
 | 1 | User has payed already,Basic user account |
 
 ## Employee
+| Name | Property Name in the Object | Description |
+|:-----|-----------------------------|-------------|
+| ID | id | id of the employee |
+| type | type | admin / mentor / ceo |
+| Discount ID | discountId | discount id |
+
+##Discount
+| Name | Property Name in the Object | Description |
+|:-----|-----------------------------|-------------|
+| ID | id | id of the discount |
+| amount | amount | amount in percentages 0 <= 100 |
+
 
