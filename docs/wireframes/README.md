@@ -7,3 +7,4 @@
 * Member-> has a divider, under it are the goals that are pending / rejected
 * Mentor / leader-> The group view has fitering for 'to be reviewed' goals
 * Mentor / leader-> Meeting scheduling, member kicking and inviting 'MANAGER page'
+* Week and year -+- add / view manager
