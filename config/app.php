@@ -97,6 +97,8 @@ return [
 
 	'log' => 'daily',
 
+ 
+
 	/*
 	|--------------------------------------------------------------------------
 	| Autoloaded Service Providers
@@ -107,7 +109,6 @@ return [
 	| this array to grant expanded functionality to your applications.
 	|
 	*/
-
 	'providers' => [
 
 		/*
@@ -144,6 +145,8 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+        'LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider',
+        'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
 
 	],
 
@@ -192,7 +195,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-
+        'Authorizer' => 'LucaDegasperi\OAuth2Server\Facades\AuthorizerFacade',
 	],
 
 ];
