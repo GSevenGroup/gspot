@@ -1,8 +1,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="Angular trainging">
-        <meta name="author" content="tamafogt">
+        <meta name="description" content="GSeven Webapp">
+        <meta name="author" content="Henrik Lassu, Tamas Fogt">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
         
