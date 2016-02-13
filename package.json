@@ -16,7 +16,11 @@
     "angular-messages": "^1.4.8",
     "angular-translate": "^2.9.1",
     "angular-ui-router": "^0.2.15",
-    "gulp-sass": "^2.2.0"
+    "gulp-cache": "^0.4.2",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^2.2.0",
+    "imagemin": "^4.0.0",
+    "run-sequence": "^1.1.5"
   },
   "devDependencies": {
     "gulp": "^3.8.8",

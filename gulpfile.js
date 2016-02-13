@@ -6,9 +6,12 @@ var watch = require('gulp-watch');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
 var rename = require('gulp-rename');
-var watch = require('gulp-watch');
 var clean = require('gulp-clean');
 var sass = require('gulp-sass');
+var runSequence = require('run-sequence');
+var cache = require('gulp-cache');
+var imagemin = require('imagemin');
+
 
 var FEapp = "frontend/app";
 var publicjs = "public/js";
@@ -16,6 +19,8 @@ var publiccss = "public/css";
 var publiclib = "public/lib";
 var publictpl = "public/tpl";
 var publiclangs = "public/langs";
+var publicimg = "public/img";
+var publicfonts = "public/fonts";
 
 elixir(function(mix) {
     mix.less('app.less');
@@ -33,17 +38,36 @@ gulp.task('sass', function () {
       .pipe(gulp.dest(FEapp + '/css/'));
 });
 
-gulp.task('start', [ 'build:js', 'copy:thirdparty', 'copy:langs', 'copy:html', 'copy:templates', 'copy:css']);
-gulp.task('startdev', [ 'builddev:js', 'sass', 'copy:thirdpartydev', 'copy:langs', 'copy:html', 'copy:templates', 'copy:css']);
+gulp.task('start', function(callback){
+    runSequence(['build:js', 'copy:thirdparty', 'copy:langs', 'copy:html', 'copy:templates', 'copy:fonts', 'copy:img', 'sass'], 'copy:css', callback)
+});
+gulp.task('startdev', function(callback){
+    runSequence(['builddev:js', 'copy:thirdpartydev', 'copy:langs', 'copy:fonts', 'copy:img', 'copy:html', 'copy:templates', 'sass'], 'copy:css', callback)
+});
 
 gulp.task('build', [ 'build:js', 'copy:thirdparty', 'copy:html', 'copy:templates']);
 
+gulp.task('copy:img', function(){
+    return gulp.src('app/img/*.+(png|jpg|jpeg|gif|svg)')
+        // Caching images that ran through imagemin
+      .pipe(cache(imagemin({
+          interlaced: true
+      })))
+      .pipe(gulp.dest(publicimg));
+});
 
 function copyLangs(){
     return gulp.src(FEapp + '/langs/*.json')
     .pipe(gulp.dest(publiclangs));
 }
 gulp.task('copy:langs', copyLangs);
+
+function copyFonts(){
+    return gulp.src([FEapp + '/fonts/*.otf',
+                    FEapp + '/fonts/*.ttf'])
+      .pipe(gulp.dest(publicfonts));
+}
+gulp.task('copy:fonts', copyFonts);
 
 function resetDist() {
 	return gulp.src([publiclib, publicjs, publiccss, publictpl], {read: false})
@@ -131,3 +155,9 @@ function copyCSS() {
     .pipe(gulp.dest(publiccss));
 }
 gulp.task('copy:css', copyCSS);
+
+/*function copyImg() {
+    return gulp.src(FEapp + '/img/*.png')
+      .pipe(gulp.dest(publicimg));
+}
+gulp.task('copy:img', copyImg);*/

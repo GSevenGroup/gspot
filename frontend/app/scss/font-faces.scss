@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'defaultFont';
+  src: url('../fonts/LinLibertine_normal.ttf');
+}
+
+@font-face {
+  font-family: 'defaultFontB';
+  src: url('../fonts/LinLibertine_bold.ttf');
+}
+
+@font-face {
+  font-family: 'defaultFontI';
+  src: url('../fonts/LinLibertine_italic.ttf');
+}
+
+@font-face {
+  font-family: 'defaultFontBI';
+  src: url('../fonts/LinLibertine_bolditalic.ttf');
+}
+
+@font-face {
+  font-family: 'quoteFont';
+  src: url('../fonts/Champignon.otf');
+}
+
+@mixin bold-font(){
+  font-family: defaultFontB;
+  font-weight: bold;
+}
+
+@mixin italic-font(){
+  font-family: defaultFontI;
+  font-style: italic;
+}
+
+@mixin bolditalic-font(){
+  font-family: defaultFontBI;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@mixin quote(){
+  font-family: quoteFont;
+}

@@ -1,4 +1,4 @@
-var app = angular.module('gApp', ['ui.router', 'pascalprecht.translate']);
+var app = angular.module('gApp', ['ui.router', 'pascalprecht.translate' ,'ngMaterial', 'ngMdIcons']);
 
 app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', function($urlRouterProvider, $stateProvider, $translateProvider){
 
