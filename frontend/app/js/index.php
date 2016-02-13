@@ -1,3 +1,4 @@
+<!-- NO NEED FOR THIS FILE -->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -20,6 +21,7 @@
         <script src="dist/lib/angular-animate.js"></script> 
         <script src="dist/lib/angular-material.js"></script> 
         <script src="dist/lib/angular-material-icons.js"></script> 
+        <script src="dist/lib/angular-material-icons.js"></script>
         <script src="dist/gApp.js"></script>
 
         <div ui-view></div>

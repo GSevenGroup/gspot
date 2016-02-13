@@ -20,6 +20,8 @@
         <script src="lib/angular-animate.js"></script>
         <script src="lib/angular-material.js"></script>
         <script src="lib/angular-material-icons.js"></script>
+        <script src="lib/angular-translate.min.js"></script>
+        <script src="lib/angular-translate-loader-static-files.min.js"></script>
         <script src="js/gApp.js"></script>
 
         <div ui-view></div>

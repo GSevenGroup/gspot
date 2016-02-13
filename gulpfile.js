@@ -15,6 +15,7 @@ var publicjs = "public/js";
 var publiccss = "public/css";
 var publiclib = "public/lib";
 var publictpl = "public/tpl";
+var publiclangs = "public/langs";
 
 elixir(function(mix) {
     mix.less('app.less');
@@ -40,7 +41,7 @@ gulp.task('build', [ 'build:js', 'copy:thirdparty', 'copy:html', 'copy:templates
 
 function copyLangs(){
     return gulp.src(FEapp + '/langs/*.json')
-    .pipe(gulp.dest(publiclib));
+    .pipe(gulp.dest(publiclangs));
 }
 gulp.task('copy:langs', copyLangs);
 
@@ -84,8 +85,9 @@ function copyThirdParty() {
         'node_modules/angular-material-icons/angular-material-icons.min.js',
         'node_modules/angular-messages/angular-messages.min.js',
         'node_modules/angular-material/angular-material.css',
-        'node_modules/angular-material-icons/angular-material-icons.css'
-        
+        'node_modules/angular-material-icons/angular-material-icons.css',
+        'node_modules/angular-translate/dist/angular-translate.min.js',
+        'otherThirdParty/angular-translate-loader-static-files.min.js'
     ])
     .pipe(gulp.dest(publiclib));
 }
@@ -101,7 +103,9 @@ function copyThirdPartyDev() {
         'node_modules/angular-material-icons/angular-material-icons.js',
         'node_modules/angular-messages/angular-messages.js',
         'node_modules/angular-material/angular-material.css',
-        'node_modules/angular-material-icons/angular-material-icons.css'
+        'node_modules/angular-material-icons/angular-material-icons.css',
+        'node_modules/angular-translate/dist/angular-translate.min.js',
+        'otherThirdParty/angular-translate-loader-static-files.min.js'
     ])
     .pipe(gulp.dest(publiclib));
 }

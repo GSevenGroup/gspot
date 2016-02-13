@@ -1,4 +1,4 @@
-var app = angular.module('gApp', ['ui.router']);
+var app = angular.module('gApp', ['ui.router', 'pascalprecht.translate']);
 
 app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', function($urlRouterProvider, $stateProvider, $translateProvider){
 
@@ -12,11 +12,12 @@ app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', functi
 	});
 
 	// translating
-	$http.get('langs/en.json').success(function(data) {
-		$translateProvider.translations('en', data);
-	});
-
 	$translateProvider.preferredLanguage('en');
+
+	$translateProvider.useStaticFilesLoader({
+		prefix: 'langs/',
+		suffix: '.json'
+	});
 
 }]);
 
