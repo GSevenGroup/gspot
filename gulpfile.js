@@ -10,7 +10,11 @@ var watch = require('gulp-watch');
 var clean = require('gulp-clean');
 var sass = require('gulp-sass');
 
-var appdist = "./frontend/app/js";
+var FEapp = "frontend/app";
+var publicjs = "public/js";
+var publiccss = "public/css";
+var publiclib = "public/lib";
+var publictpl = "public/tpl";
 
 elixir(function(mix) {
     mix.less('app.less');
@@ -21,47 +25,52 @@ elixir(function(mix) {
  *  compile sass task
  */
 gulp.task('sass', function () {
-    return gulp.src('./frontend/app/scss/**/*.scss')
+    return gulp.src(FEapp + '/scss/*.scss')
       .pipe(sass())
       .pipe(concat('gApp.css'))
-      .pipe(ngAnnotate({add: true}))
-      .pipe(gulp.dest('./frontend/app/css'))
+      // .pipe(ngAnnotate({add: true}))
+      .pipe(gulp.dest(FEapp + '/css/'));
 });
 
-gulp.task('start', [ 'build:js', 'copy:thirdparty', 'copy:html', 'copy:templates', 'copy:css']);
-gulp.task('startdev', [ 'builddev:js', 'sass', 'copy:thirdpartydev', 'copy:html', 'copy:templates', 'copy:css']);
+gulp.task('start', [ 'build:js', 'copy:thirdparty', 'copy:langs', 'copy:html', 'copy:templates', 'copy:css']);
+gulp.task('startdev', [ 'builddev:js', 'sass', 'copy:thirdpartydev', 'copy:langs', 'copy:html', 'copy:templates', 'copy:css']);
 
 gulp.task('build', [ 'build:js', 'copy:thirdparty', 'copy:html', 'copy:templates']);
 
 
+function copyLangs(){
+    return gulp.src(FEapp + '/langs/*.json')
+    .pipe(gulp.dest(publiclib));
+}
+gulp.task('copy:langs', copyLangs);
 
 function resetDist() {
-	return gulp.src('./public/dist', {read: false})
+	return gulp.src([publiclib, publicjs, publiccss, publictpl], {read: false})
 		.pipe(clean());
 }
 gulp.task('resetdist', resetDist);
 
 function buildScripts() {
     gulp.src([
-      appdist + '/**/*.js',
-      appdist + '/index.js'
+      FEapp + '/**/*.js',
+      FEapp + '/index.js'
     ])
     .pipe(concat('gApp.js'))
     .pipe(ngAnnotate({add: true}))
     .pipe(uglify({mangle: true }))
     .pipe(rename({extname: '.min.js'}))
-    .pipe(gulp.dest(packageJSON.config.destdir));
+    .pipe(gulp.dest(publicjs));
 }
 gulp.task('build:js', buildScripts);
 
 function buildScripts() {
     gulp.src([
-        appdist + 'js/**/*.js',
-        appdist + 'index.js'
+        FEapp + '/**/*.js',
+        FEapp + 'index.js'
     ])
     .pipe(concat('gApp.js'))
     .pipe(ngAnnotate({add: true}))
-    .pipe(gulp.dest(packageJSON.config.destdir));
+    .pipe(gulp.dest(publicjs));
 }
 gulp.task('builddev:js', buildScripts);
 
@@ -73,10 +82,12 @@ function copyThirdParty() {
         'node_modules/angular-aria/angular-aria.min.js',
         'node_modules/angular-material/angular-material.min.js',
         'node_modules/angular-material-icons/angular-material-icons.min.js',
-        'node_modules/angular-messages/angular-messages.min.js'
+        'node_modules/angular-messages/angular-messages.min.js',
+        'node_modules/angular-material/angular-material.css',
+        'node_modules/angular-material-icons/angular-material-icons.css'
         
     ])
-    .pipe(gulp.dest(packageJSON.config.destdir+'/lib'));
+    .pipe(gulp.dest(publiclib));
 }
 gulp.task('copy:thirdparty', copyThirdParty);
 
@@ -88,32 +99,31 @@ function copyThirdPartyDev() {
         'node_modules/angular-aria/angular-aria.js',
         'node_modules/angular-material/angular-material.js',
         'node_modules/angular-material-icons/angular-material-icons.js',
-        'node_modules/angular-messages/angular-messages.js'
+        'node_modules/angular-messages/angular-messages.js',
+        'node_modules/angular-material/angular-material.css',
+        'node_modules/angular-material-icons/angular-material-icons.css'
     ])
-    .pipe(gulp.dest(packageJSON.config.destdir+'/lib'));
+    .pipe(gulp.dest(publiclib));
 }
 gulp.task('copy:thirdpartydev', copyThirdPartyDev);
 
 
 function copyHtml() {
-    return gulp.src(appdist+'/index.php')
-    .pipe(gulp.dest("./resources/views"));
+    return gulp.src('resources/views/index.php')
+    // .pipe(gulp.dest("./resources/views"));
+    .pipe(gulp.dest("public/"));
 }
 gulp.task('copy:html', copyHtml);
 
 
 function copyTemplates() {
-    return gulp.src(appdist+'/**/*.tpl')
-    .pipe(gulp.dest(packageJSON.config.destdir+'/templates'));
+    return gulp.src(FEapp +'/tpl/*.tpl')
+    .pipe(gulp.dest(publictpl));
 }
 gulp.task('copy:templates', copyTemplates);
 
 function copyCSS() {
-    return gulp.src([
-         './frontend/app/css/*.css',
-        'node_modules/angular-material/angular-material.css',
-        'node_modules/angular-material-icons/angular-material-icons.css'
-    ])
-    .pipe(gulp.dest(packageJSON.config.destdir+'/css'));
+    return gulp.src(FEapp + '/css/*.css')
+    .pipe(gulp.dest(publiccss));
 }
 gulp.task('copy:css', copyCSS);
