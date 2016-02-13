@@ -14,18 +14,22 @@ var appdist = "./frontend/app/js";
 
 elixir(function(mix) {
     mix.less('app.less');
+    mix.sass('app.sass');
 });
 
 /**
  *  compile sass task
  */
 gulp.task('sass', function () {
-    return gulp.src('app/scss/**/*.scss')
+    return gulp.src('./frontend/app/scss/**/*.scss')
       .pipe(sass())
+      .pipe(concat('gApp.css'))
+      .pipe(ngAnnotate({add: true}))
+      .pipe(gulp.dest('./frontend/app/css'))
 });
 
 gulp.task('start', [ 'build:js', 'copy:thirdparty', 'copy:html', 'copy:templates', 'copy:css']);
-gulp.task('startdev', [ 'builddev:js', 'copy:thirdpartydev', 'copy:html', 'copy:templates', 'copy:css']);
+gulp.task('startdev', [ 'builddev:js', 'sass', 'copy:thirdpartydev', 'copy:html', 'copy:templates', 'copy:css']);
 
 gulp.task('build', [ 'build:js', 'copy:thirdparty', 'copy:html', 'copy:templates']);
 
@@ -39,17 +43,10 @@ gulp.task('resetdist', resetDist);
 
 function buildScripts() {
     gulp.src([
-        appdist+'/**/*controller.js',
-        appdist+'/**/*filter.js',
-        appdist+'/**/*service.js',
-        appdist+'/**/*factory.js',
-        appdist+'/**/*config.js',
-        appdist+'/**/*directive.js',
-        appdist+'/**/*run.js',
-        appdist+'/**/*module.js',
-        appdist+'/index.js'
+      appdist + '/**/*.js',
+      appdist + '/index.js'
     ])
-    .pipe(concat('myapp.js'))        
+    .pipe(concat('gApp.js'))
     .pipe(ngAnnotate({add: true}))
     .pipe(uglify({mangle: true }))
     .pipe(rename({extname: '.min.js'}))
@@ -59,17 +56,10 @@ gulp.task('build:js', buildScripts);
 
 function buildScripts() {
     gulp.src([
-         appdist+'/**/*controller.js',
-         appdist+'/**/*filter.js',
-         appdist+'/**/*service.js',
-         appdist+'/**/*factory.js',
-         appdist+'/**/*config.js',
-         appdist+'/**/*directive.js',
-         appdist+'/**/*run.js',
-         appdist+'/**/*module.js',
-         appdist+'/index.js'
+        appdist + 'js/**/*.js',
+        appdist + 'index.js'
     ])
-    .pipe(concat('myapp.js'))        
+    .pipe(concat('gApp.js'))
     .pipe(ngAnnotate({add: true}))
     .pipe(gulp.dest(packageJSON.config.destdir));
 }
@@ -120,7 +110,7 @@ gulp.task('copy:templates', copyTemplates);
 
 function copyCSS() {
     return gulp.src([
-         './frontend/app//css/myapp.css',
+         './frontend/app/css/*.css',
         'node_modules/angular-material/angular-material.css',
         'node_modules/angular-material-icons/angular-material-icons.css'
     ])

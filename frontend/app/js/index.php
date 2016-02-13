@@ -8,12 +8,11 @@
         
         <link rel="stylesheet" href="dist/css/angular-material.css">
         <link rel="stylesheet" href="dist/css/angular-material-icons.css">
-        <link rel="stylesheet" href="dist/css/myapp.css">
+        <link rel="stylesheet" href="dist/css/gApp.css">
 
         <base href="/">    
     </head>
-    <body ng-app="myapp">
-		<div ui-view></div>
+    <body ng-app="gApp">
         <script src="dist/lib/angular.js"></script>
         <script src="dist/lib/angular-ui-router.js"></script>
         <script src="dist/lib/angular-aria.js"></script> 
@@ -21,6 +20,8 @@
         <script src="dist/lib/angular-animate.js"></script> 
         <script src="dist/lib/angular-material.js"></script> 
         <script src="dist/lib/angular-material-icons.js"></script> 
-        <script src="dist/myapp.js"></script>
+        <script src="dist/gApp.js"></script>
+
+        <div ui-view></div>
     </body>
 </html>

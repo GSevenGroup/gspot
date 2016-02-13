@@ -1,1 +1,2 @@
-angular.module('myapp', [])
+angular.module('gApp', ['ui.router']);
+
