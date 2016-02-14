@@ -1,5 +1,6 @@
 @import "colors";
 @import "font-faces";
+@import "defaultClasses";
 
 body {
   width:100%;
@@ -42,6 +43,98 @@ body {
   margin: 10px auto 0;
 
   #content{
+    md-card.about-us{
 
+      //generic
+
+      .big-profile-pic{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 60px;
+      }
+
+      .about-us-henrik {
+
+        margin-bottom: 20px;
+
+        .big-profile-pic {
+          background-image: url('../img/henrikcircle.png');
+        }
+
+        .about-us-motto {
+          @include border-radius(10px);
+          @include box-shadow(3px 3px 3px #dedede);
+          padding: 5px;
+          border: 1px solid #ccc;
+          margin-left: 20px;
+          background-color: #eeeeff;
+
+          .about-us-motto-title {
+            font-size: 1.2em;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .about-us-tomi{
+        .big-profile-pic{
+          background-image: url('../img/tomicircle.png');
+        }
+
+        .about-us-motto{
+          @include border-radius(10px);
+          @include box-shadow(3px 3px 3px #dedede);
+          padding: 5px;
+          border: 1px solid #ccc;
+          margin-left: 20px;
+          background-color: #eeeeff;
+
+          .about-us-motto-title{
+            font-size: 1.2em;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  #right-sidebar{
+    .social-media-boxes{
+
+      .row{
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 10px 0;
+        background-position: center left;
+        margin: 5px 0;
+        text-indent: 50px;
+        @include border-radius(5px);
+      }
+
+      .row:hover{
+        cursor: pointer;
+        background-color: $highlight-grey;
+      }
+
+      .row:active{
+        box-shadow: inset 0 0 4px 0 #777;
+      }
+
+      .fb{
+        background-image: url('../img/fb.svg');
+      }
+      .tw{
+        background-image: url('../img/tw.svg');
+      }
+      .ig{
+        background-image: url('../img/ig.svg');
+      }
+      .yt{
+        background-image: url('../img/yt.svg');
+      }
+
+    }
   }
 }

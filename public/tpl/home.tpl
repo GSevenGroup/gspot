@@ -32,31 +32,25 @@
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
-          <div class="about-us-henrik">
-            <div class="big-profile-pic">
-              <!--<img src="img/henrik.png" title="Henrik"/>-->
-            </div>
-            <div class="relating-line"></div>
-            <div class="about-us-motto-henrik">
+          <div class="about-us-henrik" layout="row">
+            <div class="big-profile-pic" flex="10"></div>
+            <div class="about-us-motto" flex="70">
               <div class="about-us-motto-title">
                 <span>Henrik</span>
               </div>
-              <div class="about-us-motto">
+              <div class="about-us-motto-text">
                 <span>{{ 'ABOUT_US_MOTTO_HENRIK' | translate }}</span>
               </div>
             </div>
           </div>
 
-          <div class="about-us-tomi">
-            <div class="big-profile-pic">
-              <!--<img src="img/tomi.png" title="Tomi"/>-->
-            </div>
-            <div class="relating-line"></div>
-            <div class="about-us-motto-tomi">
+          <div class="about-us-tomi" layout="row">
+            <div class="big-profile-pic" flex="10"></div>
+            <div class="about-us-motto" flex="70">
               <div class="about-us-motto-title">
                 <span>Tomi</span>
               </div>
-              <div class="about-us-motto">
+              <div class="about-us-motto-text">
                 <span>{{ 'ABOUT_US_MOTTO_TOMI' | translate }}</span>
               </div>
             </div>
@@ -93,43 +87,31 @@
       <md-card class="social-media-contacts">
         <md-card-title class="g">
           <md-card-title-text>
-            <span class="md-headline">{{ 'HOME_INTERESTED' | translate }}</span>
+            <span class="md-headline">{{ 'HOME_INTERESTED' | translate }}<br/></span>
             <span class="md-headline-sub">{{ 'HOME_INTERESTED_SUB' | translate }}</span>
           </md-card-title-text>
         </md-card-title>
 
-        <div class="social-media-boxes" layout="row">
-          <div class="logo" flex="20">
-            <ng-md-icon icon="facebook-box" title="{{ 'FB_G7' | translate }}"></ng-md-icon>
-          </div>
-          <div class="name" flex flex="80">
+        <div class="social-media-boxes">
+          <div class="row fb">
             <span>{{ 'FB_G7' | translate }}</span>
           </div>
         </div>
 
-        <div class="social-media-boxes" layout="row">
-          <div class="logo" flex="20">
-            <ng-md-icon icon="instagram-box" title="{{ 'INSTA_G7' | translate }}"></ng-md-icon>
-          </div>
-          <div class="name" flex flex="80">
+        <div class="social-media-boxes">
+          <div class="row ig">
             <span>{{ 'INSTA_G7' | translate }}</span>
           </div>
         </div>
 
-        <div class="social-media-boxes" layout="row">
-          <div class="logo" flex="20">
-            <ng-md-icon icon="twitter-box" title="{{ 'TW_G7' | translate }}"></ng-md-icon>
-          </div>
-          <div class="name" flex flex="80">
+        <div class="social-media-boxes">
+          <div class="row tw">
             <span>{{ 'TW_G7' | translate }}</span>
           </div>
         </div>
 
-        <div class="social-media-boxes" layout="row">
-          <div class="logo" flex="20">
-            <ng-md-icon icon="youtube-box" title="{{ 'YT_G7' | translate }}"></ng-md-icon>
-          </div>
-          <div class="name" flex="80">
+        <div class="social-media-boxes">
+          <div class="row yt">
             <span>{{ 'YT_G7' | translate }}</span>
           </div>
         </div>

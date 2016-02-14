@@ -44,6 +44,9 @@ gulp.task('start', function(callback){
 gulp.task('startdev', function(callback){
     runSequence(['builddev:js', 'copy:thirdpartydev', 'copy:langs', 'copy:fonts', 'copy:img', 'copy:html', 'copy:templates', 'sass'], 'copy:css', callback)
 });
+gulp.task('designing', function(callback){
+    runSequence(['sass', 'copy:templates'], 'copy:css', callback);
+});
 
 gulp.task('build', [ 'build:js', 'copy:thirdparty', 'copy:html', 'copy:templates']);
 

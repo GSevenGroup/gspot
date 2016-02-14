@@ -70,6 +70,37 @@
   font-family: 'quoteFont';
   src: url("../fonts/Champignon.otf"); }
 
+@font-face {
+  font-family: 'defaultFont';
+  src: url("../fonts/Cabin-Regular.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontB';
+  src: url("../fonts/LinLibertine_bold.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontI';
+  src: url("../fonts/LinLibertine_italic.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontBI';
+  src: url("../fonts/LinLibertine_bolditalic.ttf"); }
+
+@font-face {
+  font-family: 'quoteFont';
+  src: url("../fonts/Champignon.otf"); }
+
+.quote {
+  font-family: quoteFont; }
+
+.text-center {
+  text-align: center; }
+
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 body {
   width: 100%;
   padding: 0;
@@ -99,6 +130,74 @@ body {
 #body {
   width: 70%;
   margin: 10px auto 0; }
+  #body #content md-card.about-us .big-profile-pic {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 60px; }
+  #body #content md-card.about-us .about-us-henrik {
+    margin-bottom: 20px; }
+    #body #content md-card.about-us .about-us-henrik .big-profile-pic {
+      background-image: url("../img/henrikcircle.png"); }
+    #body #content md-card.about-us .about-us-henrik .about-us-motto {
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      border-radius: 10px;
+      -webkit-box-shadow: 3px 3px 3px #dedede;
+      -moz-box-shadow: 3px 3px 3px #dedede;
+      -ms-box-shadow: 3px 3px 3px #dedede;
+      box-shadow: 3px 3px 3px #dedede;
+      padding: 5px;
+      border: 1px solid #ccc;
+      margin-left: 20px;
+      background-color: #eeeeff; }
+      #body #content md-card.about-us .about-us-henrik .about-us-motto .about-us-motto-title {
+        font-size: 1.2em;
+        text-decoration: underline; }
+  #body #content md-card.about-us .about-us-tomi .big-profile-pic {
+    background-image: url("../img/tomicircle.png"); }
+  #body #content md-card.about-us .about-us-tomi .about-us-motto {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 3px #dedede;
+    -moz-box-shadow: 3px 3px 3px #dedede;
+    -ms-box-shadow: 3px 3px 3px #dedede;
+    box-shadow: 3px 3px 3px #dedede;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+    background-color: #eeeeff; }
+    #body #content md-card.about-us .about-us-tomi .about-us-motto .about-us-motto-title {
+      font-size: 1.2em;
+      text-decoration: underline; }
+  #body #right-sidebar .social-media-boxes .row {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 10px 0;
+    background-position: center left;
+    margin: 5px 0;
+    text-indent: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+  #body #right-sidebar .social-media-boxes .row:hover {
+    cursor: pointer;
+    background-color: #dedede; }
+  #body #right-sidebar .social-media-boxes .row:active {
+    box-shadow: inset 0 0 4px 0 #777; }
+  #body #right-sidebar .social-media-boxes .fb {
+    background-image: url("../img/fb.svg"); }
+  #body #right-sidebar .social-media-boxes .tw {
+    background-image: url("../img/tw.svg"); }
+  #body #right-sidebar .social-media-boxes .ig {
+    background-image: url("../img/ig.svg"); }
+  #body #right-sidebar .social-media-boxes .yt {
+    background-image: url("../img/yt.svg"); }
 
 md-card {
   padding: 10px; }
