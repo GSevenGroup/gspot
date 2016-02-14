@@ -1,0 +1,108 @@
+
+@font-face {
+  font-family: 'defaultFont';
+  src: url("../fonts/LinLibertine_normal.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontB';
+  src: url("../fonts/LinLibertine_bold.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontI';
+  src: url("../fonts/LinLibertine_italic.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontBI';
+  src: url("../fonts/LinLibertine_bolditalic.ttf"); }
+
+@font-face {
+  font-family: 'quoteFont';
+  src: url("../fonts/Champignon.otf"); }
+
+.quote {
+  font-family: quoteFont; }
+
+.text-center {
+  text-align: center; }
+
+.padding-1 {
+  padding: 2px; }
+
+.padding-2 {
+  padding: 5px; }
+
+.padding-10 {
+  padding: 10px; }
+
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+@font-face {
+  font-family: 'defaultFont';
+  src: url("../fonts/LinLibertine_normal.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontB';
+  src: url("../fonts/LinLibertine_bold.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontI';
+  src: url("../fonts/LinLibertine_italic.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontBI';
+  src: url("../fonts/LinLibertine_bolditalic.ttf"); }
+
+@font-face {
+  font-family: 'quoteFont';
+  src: url("../fonts/Champignon.otf"); }
+
+@font-face {
+  font-family: 'defaultFont';
+  src: url("../fonts/LinLibertine_normal.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontB';
+  src: url("../fonts/LinLibertine_bold.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontI';
+  src: url("../fonts/LinLibertine_italic.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontBI';
+  src: url("../fonts/LinLibertine_bolditalic.ttf"); }
+
+@font-face {
+  font-family: 'quoteFont';
+  src: url("../fonts/Champignon.otf"); }
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  word-wrap: break-word;
+  background-color: #dedede; }
+
+#header {
+  width: 100%;
+  background: #aaaaaa url("../img/motto-image.png") no-repeat center;
+  background-size: cover;
+  height: 100px; }
+  #header .c {
+    width: 70%;
+    margin: 0 auto; }
+    #header .c #header-img {
+      background: transparent url("../img/logo.png") no-repeat center;
+      background-size: cover;
+      width: 100px;
+      height: 100px; }
+    #header .c #daily-motto span {
+      position: relative;
+      top: 50px; }
+
+#body {
+  width: 70%;
+  margin: 10px auto 0; }
