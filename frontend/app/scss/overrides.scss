@@ -1,0 +1,11 @@
+@import "colors";
+
+md-card {
+  padding: 10px;
+}
+
+md-card-title.g{
+  font-style: italic;
+  indent: 10px;
+  color: $md-card-title-color;
+}

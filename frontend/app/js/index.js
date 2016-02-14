@@ -21,3 +21,4 @@ app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', functi
 
 }]);
 
+// common
