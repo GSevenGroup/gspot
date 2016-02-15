@@ -4,8 +4,8 @@ app.controller('HomeCtrl', ['$scope', '$translate', '$http', function($scope, $t
 		grantType: 'password',
 		client_id: 'f3d259ddd3ed8ff3843839b',
 		client_secret: '4c7f6f8fa93d59c45502c0ae8c4a95b',
-		username: 'valami',
-		password: 'valami'
+		username: '',
+		password: ''
 	};
 
 	/**
@@ -20,14 +20,14 @@ app.controller('HomeCtrl', ['$scope', '$translate', '$http', function($scope, $t
 	 * @description authenticates user
 	 */
 	$scope.loginUser = function(){
-		$http.post("localhost:8080/oauth/access_token", $scope.loginUser)
+		$http.post("http://localhost:8080/oauth/access_token", $scope.loginUser)
 			.success(function(d){
 
 			})
 			.error(function(e){
 				console.log(e);
 			})
-	}
+	};
 
 	//To-DO:
 	// Write a route.json with all the routings
