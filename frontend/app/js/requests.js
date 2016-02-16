@@ -1,4 +1,4 @@
-{
+var requests = {
   "login": {},
 
   "register":{
@@ -11,4 +11,4 @@
       "language": ""
     }
   }
-}
+};

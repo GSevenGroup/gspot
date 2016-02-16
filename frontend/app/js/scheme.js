@@ -1,4 +1,4 @@
-{
+var schemes = {
   "login": {
     "grantType": "password",
     "client_id": "f3d259ddd3ed8ff3843839b",
@@ -13,4 +13,4 @@
     "lname": "",
     "lang": ""
   }
-}
+};
