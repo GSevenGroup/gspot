@@ -21,6 +21,13 @@
 
   "MEMBERS": "Members",
 
+  "REGISTER_TITLE": "Register Here:",
+  "REGISTER_EMAIL": "Email",
+  "REGISTER_PASSWORD": "Password",
+  "REGISTER_FNAME": "First Name",
+  "REGISTER_LNAME": "Last Name",
+  "REGISTER_LANGUAGE": "Language",
+
   "_": " "
 
 

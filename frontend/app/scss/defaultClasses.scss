@@ -14,10 +14,8 @@
   margin-right: auto;
 }
 
-@mixin vertical-align(){
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.pointer{
+  cursor: pointer;
 }
 
 @mixin border-radius($radius) {

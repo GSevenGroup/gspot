@@ -20,13 +20,26 @@ app.controller('HomeCtrl', ['$scope', '$translate', '$http', function($scope, $t
 	 * @description authenticates user
 	 */
 	$scope.loginUser = function(){
-		$http.post("http://localhost:8080/oauth/access_token", $scope.loginUser)
+		$scope.req = {
+			method: 'POST',
+			url: 'http://localhost:8080/oauth/access_token',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+				'charset': 'charset=UTF-8'
+			},
+			data: $scope.loginUser
+		};
+		/*$http.post("http://localhost:8080/oauth/access_token", $scope.loginUser)
 			.success(function(d){
 
 			})
 			.error(function(e){
 				console.log(e);
-			})
+			})*/
+
+		$http($scope.req).then(function(data){
+			console.log(1);
+		}, function(data){})
 	};
 
 	//To-DO:

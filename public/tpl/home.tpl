@@ -1,16 +1,9 @@
-<div id="home">
-  <div id="header">
+<div id="home" ng-controller="MainCtrl">
 
-    <div class="c" layout="row" layout-sm="column" layout-align=" end">
-      <div id="header-img" flex="20"></div>
-      <div id="daily-motto" flex="70">
-        <span class="italic quote md-display-3">{{ 'HEADER_MOTTO' | translate }}</span>
-      </div>
-      <div class="translation-icons-bar" flex="10" ng-click="changeTransTo('en')" ></div>
-    </div>
+  <ng-include src="'./tpl/header_main.tpl'"></ng-include>
 
-  </div>
   <div id="body" layout="row">
+
     <div id="content" flex="80">
       <md-card class="intro">
         <md-card-title class="g">
@@ -59,6 +52,7 @@
       </md-card>
 
     </div>
+
     <div id="right-sidebar" flex="20">
       <md-card class="members-login">
         <md-card-title class="g">
@@ -68,10 +62,10 @@
         </md-card-title>
         <md-content>
           <md-input-container md-no-float class="md-block">
-            <input ng-model="user.email" type="userLogin.username" placeholder="Email (required)" ng-required="true">
+            <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
-            <input ng-model="user.pwd" type="userLogin.password" placeholder="Password (required)" ng-required="true">
+            <input ng-model="user.pwd" type="password" placeholder="Password (required)" ng-required="true">
           </md-input-container>
           <div class="submit">
             <md-button class="gButton block-center" style="display:block;" ng-click="loginUser()">{{ 'LOGIN_LOGIN' | translate }}</md-button>

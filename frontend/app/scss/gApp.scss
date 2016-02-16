@@ -21,6 +21,8 @@ body {
   .c{
     width: 70%;
     margin: 0 auto;
+    position: relative;
+    top: 70px;
 
     #header-img{
       background:transparent url('../img/logo.png') no-repeat center;
@@ -30,9 +32,11 @@ body {
     }
 
     #daily-motto{
+      text-align: right;
       span{
         position: relative;
         top: 50px;
+        font-size: 5em;
       }
     }
   }
