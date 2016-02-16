@@ -27,11 +27,19 @@
           <input ng-model="registerModel.lname" type="text" placeholder="{{ 'REGISTER_LNAME' | translate }}" ng-required="true">
         </md-input-container>
 
-        <md-input-container md-no-float class="md-block">
-          <input ng-model="registerModel.lang" type="email" placeholder="Email (required)" ng-required="true">
+        <md-input-container>
+          <label>{{ 'LANG_SELECT' | translate}}</label>
+          <md-select ng-model="registerModel.lang">
+            <md-option value="en">
+              {{ 'LANG_EN' | translate }}
+            </md-option>
+            <md-option value="hu">
+              {{ 'LANG_HU' | translate }}
+            </md-option>
+          </md-select>
         </md-input-container>
 
-        <md-button class="gButton block-center" style="display:block;" ng-click="loginUser()">{{ 'LOGIN_LOGIN' | translate }}</md-button>
+        <md-button class="gButton block-center" style="display:block;" ng-click="register()">{{ 'REGISTER' | translate }}</md-button>
       </md-card-content>
     </md-card>
   </div>

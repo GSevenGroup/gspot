@@ -80,8 +80,14 @@ gulp.task('resetdist', resetDist);
 
 function buildScripts() {
     gulp.src([
-      FEapp + '/**/*.js',
-      FEapp + '/index.js'
+        FEapp + 'requests.js',
+        FEapp + 'scheme.js',
+        FEapp + '/controllers/*.js',
+        FEapp + '/service/*.js',
+        FEapp + '/factory/*.js',
+        FEapp + '/config/*.js',
+        FEapp + '/directive/*.js',
+        FEapp + 'index.js'
     ])
     .pipe(concat('gApp.js'))
     .pipe(ngAnnotate({add: true}))
@@ -96,10 +102,10 @@ function buildScripts() {
         FEapp + 'requests.js',
         FEapp + 'scheme.js',
         FEapp + '/controllers/*.js',
-        FEapp + '/service/*.js',
-        FEapp + '/factory/*.js',
-        FEapp + '/config/*.js',
-        FEapp + '/directive/*.js',
+        // FEapp + '/service/*.js',
+        // FEapp + '/factory/*.js',
+        // FEapp + '/config/*.js',
+        // FEapp + '/directive/*.js',
         FEapp + 'index.js'
     ])
     .pipe(concat('gApp.js'))

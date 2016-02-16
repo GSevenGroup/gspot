@@ -27,6 +27,11 @@
   "REGISTER_FNAME": "First Name",
   "REGISTER_LNAME": "Last Name",
   "REGISTER_LANGUAGE": "Language",
+  "REGISTER": "Register",
+
+  "LANG_EN": "English",
+  "LANG_HU": "Hungarian",
+  "LANG_SELECT": "Please select your preferd language",
 
   "_": " "
 
