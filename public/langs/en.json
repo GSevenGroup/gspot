@@ -33,6 +33,13 @@
   "LANG_HU": "Hungarian",
   "LANG_SELECT": "Please select your preferd language",
 
+  "MENU": "Menu",
+  "MENU_MYGOALS": "My Goals",
+  "MENU_MYGROUP": "My Group",
+  "MENU_MYMEETINGS": "My Meetings",
+  "MENU_SETTINGS": "Settings",
+  "MENU_MYPROFILE": "Profile",
+
   "_": " "
 
 

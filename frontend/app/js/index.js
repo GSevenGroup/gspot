@@ -15,6 +15,19 @@ app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', functi
 			url: '/register',
 			templateUrl: '../tpl/register.tpl',
 			controller: 'RegisterCtrl'
+		})
+		.state('myg7', {
+			url: '/mygseven',
+			templateUrl: '../tpl/mygseven.tpl',
+			controller: 'MyGSevenCtrl',
+			params: {
+				autoActivateChild: 'parentState.childState'
+			}
+		})
+		.state('myg7.mygoals', {
+			url: '/mygoals',
+			templateUrl: '../tpl/mygoals.tpl',
+			controller: 'MyGoalsCtrl'
 		});
 
 	// translating

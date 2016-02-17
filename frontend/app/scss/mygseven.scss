@@ -1,0 +1,64 @@
+@import "colors";
+
+#members-area{
+  #body{
+
+    .navbar-left{
+      md-sidenav{
+
+        md-toolbar{
+          background-color: $sidenav-toolbar-bg;
+        }
+
+        .navbar-menu{
+          padding: 0;
+          margin: 0;
+          li{
+            display: block;
+          }
+
+          .big-menu-cont{
+            // background: $gLightgray;
+
+            .user-avatar{
+              height: 200px;
+            }
+
+            .text{
+              .name{
+                font-size: 1.5em;
+                text-decoration: underline;
+              }
+
+              .name:hover{
+                cursor: pointer;
+              }
+
+              .menus{
+                .mini-menu:hover{
+                  text-decoration: underline;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+
+          .menuitems{
+            padding: 20px 0;
+            text-align: center;
+            background: $sidebar-menuitem;
+            cursor: pointer;
+          }
+          li.menuitems:hover{
+            background: $sidebar-menuitem-hover;
+          }
+          li.menuitems:active{
+            background: $sidebar-menuitem-active;
+          }
+        }
+
+      }
+    }
+
+  }
+}

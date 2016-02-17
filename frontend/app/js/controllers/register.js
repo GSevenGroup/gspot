@@ -2,7 +2,7 @@ app.controller('RegisterCtrl', ['$scope', '$translate', '$http', function($scope
 
 	//register
 
-	$scope.registerModel = scheme.register;
+	$scope.registerModel = schemes.register;
 	// 'name', 'email', 'password','email','level','landing_page','user_group','country','city','address','phone'
 
 
