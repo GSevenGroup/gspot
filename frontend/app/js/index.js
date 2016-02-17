@@ -21,7 +21,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', functi
 			templateUrl: '../tpl/mygseven.tpl',
 			controller: 'MyGSevenCtrl',
 			params: {
-				autoActivateChild: 'parentState.childState'
+				autoActivateChild: 'myg7.mygoals'
 			}
 		})
 		.state('myg7.mygoals', {

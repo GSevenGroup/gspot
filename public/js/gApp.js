@@ -52,7 +52,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', functi
 			templateUrl: '../tpl/mygseven.tpl',
 			controller: 'MyGSevenCtrl',
 			params: {
-				autoActivateChild: 'parentState.childState'
+				autoActivateChild: 'myg7.mygoals'
 			}
 		})
 		.state('myg7.mygoals', {
@@ -124,6 +124,9 @@ app.controller('HomeCtrl', ['$scope', '$translate', '$http', function($scope, $t
 app.controller('MainCtrl', ['$scope', '$http', function($scope, $http){
 
 	//main stuff could come here
+
+}]);
+app.controller('MyGoalsCtrl', ['$scope', '$http', function($scope, $http){
 
 }]);
 app.controller('MyGSevenCtrl', ['$scope', '$http', '$mdSidenav', function($scope, $http, $mdSidenav){

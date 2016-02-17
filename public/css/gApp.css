@@ -210,6 +210,40 @@ body {
   #home #body #right-sidebar .social-media-boxes .yt {
     background-image: url("../img/yt.svg"); }
 
+@font-face {
+  font-family: 'defaultFont';
+  src: url("../fonts/Cabin-Regular.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontB';
+  src: url("../fonts/LinLibertine_bold.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontI';
+  src: url("../fonts/LinLibertine_italic.ttf"); }
+
+@font-face {
+  font-family: 'defaultFontBI';
+  src: url("../fonts/LinLibertine_bolditalic.ttf"); }
+
+@font-face {
+  font-family: 'quoteFont';
+  src: url("../fonts/Champignon.otf"); }
+
+.quote {
+  font-family: quoteFont; }
+
+.text-center {
+  text-align: center; }
+
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.pointer {
+  cursor: pointer; }
+
 #members-area #body .navbar-left md-sidenav md-toolbar {
   background-color: #567; }
 
@@ -231,12 +265,76 @@ body {
   #members-area #body .navbar-left md-sidenav .navbar-menu .menuitems {
     padding: 20px 0;
     text-align: center;
-    background: aliceblue;
+    background: #fff;
     cursor: pointer; }
   #members-area #body .navbar-left md-sidenav .navbar-menu li.menuitems:hover {
     background: #6796E6; }
   #members-area #body .navbar-left md-sidenav .navbar-menu li.menuitems:active {
     background: #568AE3; }
+
+.mygoals {
+  width: 70%;
+  margin: 30px auto 0; }
+  .mygoals .goal-cont .goal {
+    margin: 10px 0 0; }
+    .mygoals .goal-cont .goal .category-goal {
+      -webkit-border-radius: 5px 0 0 5px;
+      -moz-border-radius: 5px 0 0 5px;
+      -ms-border-radius: 5px 0 0 5px;
+      border-radius: 5px 0 0 5px;
+      background: #567;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px; }
+    .mygoals .goal-cont .goal .text {
+      padding: 10px;
+      -webkit-border-radius: 0 5px 5px 0;
+      -moz-border-radius: 0 5px 5px 0;
+      -ms-border-radius: 0 5px 5px 0;
+      border-radius: 0 5px 5px 0;
+      border: 1px solid #777777; }
+    .mygoals .goal-cont .goal .options .icons {
+      padding: 10px; }
+    .mygoals .goal-cont .goal .options .set-done-goal {
+      background-image: url("../img/done.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .mygoals .goal-cont .goal .options .delete-goal {
+      background-image: url("../img/delete.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+  .mygoals .goal-cont .comments {
+    font-size: 0.8em;
+    padding: 3px;
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa; }
+    .mygoals .goal-cont .comments .author {
+      text-decoration: underline;
+      padding: 5px; }
+    .mygoals .goal-cont .comments .comment-text {
+      border-right: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      padding: 5px; }
+    .mygoals .goal-cont .comments .comment-date {
+      font-style: italic;
+      padding: 5px; }
+  .mygoals .goal-cont .comments:last-child {
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -ms-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px; }
+  .mygoals .goal-cont .comments:first-child {
+    border-top: 0; }
+  .mygoals md-tab-item {
+    background-color: #567;
+    color: #0A3173; }
+  .mygoals .new-goal {
+    border-top: 1px solid #aaa;
+    margin: 50px 0 0;
+    padding: 10px; }
 
 md-card {
   padding: 10px; }

@@ -3,7 +3,7 @@
 
   <div id="body" layout="row">
 
-    <div class="navbar-left" flex>
+    <div class="navbar-left" flex="15">
       <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="true">
         <md-toolbar class="">
           <h1 class="md-toolbar-tools">{{ 'MENU' | translate }}</h1>
@@ -34,7 +34,7 @@
       </md-sidenav>
     </div>
 
-    <div id="middle-section" flex>
+    <div id="middle-section" flex="85">
       <div ui-view></div>
     </div>
 
