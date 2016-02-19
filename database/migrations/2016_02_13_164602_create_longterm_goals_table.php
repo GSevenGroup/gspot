@@ -23,7 +23,6 @@ class CreateLongtermGoalsTable extends Migration {
             $table->integer('review_status_id')->unsigned();
             $table->integer('status_id')->unsigned();
             $table->integer('category_id')->unsigned();
-            $table->foreign('suggest_id')->references('id')->on('users');
             $table->foreign('assigned_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('review_status_id')->references('id')->on('review_statuses');
