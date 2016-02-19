@@ -1,4 +1,3 @@
 DROP DATABASE IF EXISTS gspotdb;
 CREATE DATABASE IF NOT EXISTS gspotdb;
 USE gspotdb;
-
