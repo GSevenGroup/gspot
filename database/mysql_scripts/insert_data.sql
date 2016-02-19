@@ -38,11 +38,11 @@ INSERT INTO categories (id ,category ) VALUES
 
 -- INSERT USERS --	
 INSERT INTO users (name ,password ,email ,level ,landing_page ,user_group   ,country ,city ,address ,phone, created_at, updated_at ) VALUES
-('g7tomi', '$2a$08$CTICqZ6FglDSOFP/VK8t7u0rXaCRClzZuu5hI17BaElFQxfdyDvh.', 'xxx@ccc.com', '0', 'home','1','Magyarország','Isaszeg','Május 1 u. 1','11111', '2015–05–12 21:00:00', '0000–00–00 00:00:00' );
+('g7tomi', '$2a$08$CTICqZ6FglDSOFP/VK8t7u0rXaCRClzZuu5hI17BaElFQxfdyDvh.', 'test1@test.com', '0', 'home','1','Magyarország','Isaszeg','Május 1 u. 1','11111', '2015–05–12 21:00:00', '0000–00–00 00:00:00' );
 INSERT INTO users (name ,password ,email ,level ,landing_page ,user_group   ,country ,city ,address ,phone, created_at, updated_at ) VALUES
-('g7henrik', '$2a$08$CTICqZ6FglDSOFP/VK8t7u0rXaCRClzZuu5hI17BaElFQxfdyDvh.', 'faa@ccc.com', '0', 'home','1','Magyarország','Budapest','Béla 1 u. 1','11311', '2015–05–12 21:00:00', '0000–00–00 00:00:00' );
+('g7henrik', '$2a$08$CTICqZ6FglDSOFP/VK8t7u0rXaCRClzZuu5hI17BaElFQxfdyDvh.', 'test2@test.com', '0', 'home','1','Magyarország','Budapest','Béla 1 u. 1','11311', '2015–05–12 21:00:00', '0000–00–00 00:00:00' );
 INSERT INTO users (name ,password ,email ,level ,landing_page ,user_group   ,country ,city ,address ,phone, created_at, updated_at ) VALUES
-('member1', '$2a$08$CTICqZ6FglDSOFP/VK8t7u0rXaCRClzZuu5hI17BaElFQxfdyDvh.', 'baaa@ccc.com', '0', 'home','1','Magyarország','Göd','Király 1 u. 1','11122', '2015–05–12 21:00:00', '0000–00–00 00:00:00' );
+('member1', '$2a$08$CTICqZ6FglDSOFP/VK8t7u0rXaCRClzZuu5hI17BaElFQxfdyDvh.', 'test3@test.com', '0', 'home','1','Magyarország','Göd','Király 1 u. 1','11122', '2015–05–12 21:00:00', '0000–00–00 00:00:00' );
 
 -- INSERT user roles --
 INSERT INTO user_roles (id,user_id ,role, created_at, updated_at ) VALUES
@@ -73,15 +73,15 @@ INSERT INTO weeks (week_num,date_from,date_to,group_id, created_at, updated_at )
 
 -- INSERT LONG TERM GOALS
 INSERT INTO longterm_goals (goal,sketch,suggest_id,assigned_id,goal_date,review_status_id,status_id,category_id, created_at, updated_at) VALUES
-('ccccccccccccccccccccccccccccccccc',false,1,2,'2016-01-24',1,1,3, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
+('ccccccccccccccccccccccccccccccccc',false,0,2,'2016-01-24',1,1,3, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
 INSERT INTO longterm_goals (goal,sketch,suggest_id,assigned_id,goal_date,review_status_id,status_id,category_id, created_at, updated_at) VALUES
-('bbbbbbbbbbbbbbbbbbbbb',false,1,2,'2016-01-24',1,2,3, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
+('bbbbbbbbbbbbbbbbbbbbb',false,0,2,'2016-01-24',1,2,3, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
 
 -- INSERT SHORT TERM GOALS
 INSERT INTO shortterm_goals (sketch,goal,suggest_id,assigned_id,week_id,review_status_id,status_id,goal_id, created_at, updated_at) VALUES
-(false,'ccccccccccccccccccccccccccccccccc',1,2,1,1,3,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
+(false,'ccccccccccccccccccccccccccccccccc',0,2,1,1,3,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
 INSERT INTO shortterm_goals (sketch,goal,suggest_id,assigned_id,week_id,review_status_id,status_id,goal_id, created_at, updated_at) VALUES
-(true,'bbbbbbbbbbbbbbbbbbbbb',1,2,1,2,3,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
+(true,'bbbbbbbbbbbbbbbbbbbbb',0,2,1,2,3,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
 
 -- Create SHORT TERM  GOAL Comments  CONNTENTION--
 INSERT INTO shortterm_goal_comments (message,comment_type,comment_date,user_id,goal_id, created_at, updated_at ) VALUES

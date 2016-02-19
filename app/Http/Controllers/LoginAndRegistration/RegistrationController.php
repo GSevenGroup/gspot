@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use \Authorizer;
 class RegistrationController extends Controller {
 
 	/**
@@ -22,10 +22,9 @@ class RegistrationController extends Controller {
 	}
     public function testDB()
     {
-        /*
-        $x = \App\Models\User::find(1)->getRoles;
-        echo $x;
-        $x = \App\Models\Category::find(1);
+        
+
+        /*$x = \App\Models\Category::find(1);
         echo $x;
         $x = \App\Models\Status::find(2);
         echo $x;
@@ -33,8 +32,9 @@ class RegistrationController extends Controller {
         echo $x; 
         $x = \App\Models\User::find(1)->getMentoredGroup;
         echo $x;
-        */
-        $x = \App\Models\LongtermGoal::find(1)->getShortTermGoals;
+        
+        $x = \App\Models\LongtermGoal::find(1)->getComents;
         echo $x;
+        */
     }
 }
