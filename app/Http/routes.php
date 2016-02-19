@@ -26,7 +26,7 @@ Route::group(
             Route::get('/mainpage', 'MainPageController@getData');
             
             Route::get('/users', 'LoginAndRegistration\UserController@getUsers');
-            Route::post('/createuser', 'LoginAndRegistration\UserController@addUser');
+
             Route::post('/edit', 'LoginAndRegistration\UserController@editUser');
             Route::get('/user', 'LoginAndRegistration\UserController@getUser');
             
@@ -51,3 +51,4 @@ Route::group(
 
 Route::get('/register','LoginAndRegistration\RegistrationController@register');
 Route::get('/testDB','LoginAndRegistration\RegistrationController@testDB');
+Route::post('/createuser', 'LoginAndRegistration\UserController@addUser');
