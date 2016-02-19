@@ -5,7 +5,9 @@ use Illuminate\Database\Eloquent\Model;
 class ShorttermGoal extends Model {
 
 	protected $table = 'shortterm_goals';
-
+    
+	protected $fillable = ['goal', 'sketch','suggest_id', 'assigned_id','goal_id','review_status_id','status_id','week_id'];
+    
     public function getSuggestedUser()
     {
         return $this->belongsTo('App\Models\User','suggest_id');
@@ -21,16 +23,16 @@ class ShorttermGoal extends Model {
     }
     public function getReviewStatus()
     {
-        return $this->belongsTo('App\Models\ReviewStatus');
+        return $this->belongsTo('App\Models\ReviewStatus','review_status_id');
     }
     public function getStatus()
     {
-        return $this->belongsTo('App\Models\Status');
+        return $this->belongsTo('App\Models\Status','status_id');
     }
     
     public function getComents()
     {
-        return $this->belongsTo('App\Models\ShorttermGoalComment','goal_id');
+        return $this->hasMany('App\Models\ShorttermGoalComment','goal_id');
     }
     public function getLongTermGoals()
     {
