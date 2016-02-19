@@ -10,7 +10,10 @@ use \Authorizer;
 
 class UserController extends Controller {
 	
+<<<<<<< HEAD
     
+=======
+>>>>>>> backend_query_data
     public function getUser(){
         return response(User::find(Authorizer::getResourceOwnerId()),200);
     }

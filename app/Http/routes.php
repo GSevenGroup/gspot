@@ -25,8 +25,7 @@ Route::group(
         function() {
             Route::get('/mainpage', 'MainPageController@getData');
             
-            Route::get('/users', 'LoginAndRegistration\UserController@getUsers');
-
+            Route::get('/users',['middleware' => 'admin','uses'=> 'LoginAndRegistration\UserController@getUsers']);
             Route::post('/edit', 'LoginAndRegistration\UserController@editUser');
             Route::get('/user', 'LoginAndRegistration\UserController@getUser');
             
