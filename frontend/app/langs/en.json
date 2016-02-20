@@ -1,0 +1,47 @@
+{
+  "MAIN_PAGE_HEADER_TITLE": "Who are we?",
+  "MAIN_PAGE_CONTENT_TEXT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+
+  "HEADER_MOTTO": "\"Success is a habit\"",
+
+  "ABOUT_US_TITLE": "Henrik & Tomi",
+  "ABOUT_US_MOTTO_HENRIK": "I'm sooo motivated to write everything into this json.",
+  "ABOUT_US_MOTTO_TOMI": "Backend is like a father to me. The Darth Vader type...",
+
+  "LOGIN_LOGIN": "Login",
+  "LOGIN_ERROR": "There was an error with the login!",
+
+  "HOME_INTERESTED": "Interested?",
+  "HOME_INTERESTED_SUB": "Find out even more:",
+
+  "FB_G7": "GSevenGroup",
+  "INSTA_G7": "GSevenGroup",
+  "TW_G7": "GSevenGroup",
+  "YT_G7": "GSevenGroup",
+
+  "MEMBERS": "Members",
+
+  "REGISTER_TITLE": "Register Here:",
+  "REGISTER_EMAIL": "Email",
+  "REGISTER_PASSWORD": "Password",
+  "REGISTER_FNAME": "First Name",
+  "REGISTER_LNAME": "Last Name",
+  "REGISTER_LANGUAGE": "Language",
+  "REGISTER": "Register",
+
+  "LANG_EN": "English",
+  "LANG_HU": "Hungarian",
+  "LANG_SELECT": "Please select your preferd language",
+
+  "MENU": "Menu",
+  "MENU_MYGOALS": "My Goals",
+  "MENU_MYGROUP": "My Group",
+  "MENU_MYMEETINGS": "My Meetings",
+  "MENU_SETTINGS": "Settings",
+  "MENU_MYPROFILE": "Profile",
+
+  "_": " "
+
+
+
+}

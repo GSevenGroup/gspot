@@ -1,0 +1,152 @@
+@import "colors";
+@import "defaultClasses";
+
+#members-area{
+  #body{
+
+    .navbar-left{
+      md-sidenav{
+
+        md-toolbar{
+          background-color: $sidenav-toolbar-bg;
+        }
+
+        .navbar-menu{
+          padding: 0;
+          margin: 0;
+          li{
+            display: block;
+          }
+
+          .big-menu-cont{
+            // background: $gLightgray;
+
+            .user-avatar{
+              height: 200px;
+            }
+
+            .text{
+              .name{
+                font-size: 1.5em;
+                text-decoration: underline;
+              }
+
+              .name:hover{
+                cursor: pointer;
+              }
+
+              .menus{
+                .mini-menu:hover{
+                  text-decoration: underline;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+
+          .menuitems{
+            padding: 20px 0;
+            text-align: center;
+            background: $sidebar-menuitem;
+            cursor: pointer;
+          }
+          li.menuitems:hover{
+            background: $sidebar-menuitem-hover;
+          }
+          li.menuitems:active{
+            background: $sidebar-menuitem-active;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  #middle-section{}
+}
+
+.mygoals{
+  width: 70%;
+  margin: 30px auto 0;
+
+  .goal-cont {
+    .goal {
+      margin: 10px 0 0;
+
+      .category-goal {
+        @include border-radius(5px 0 0 5px);
+        background: $sidenav-toolbar-bg;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px;
+      }
+
+      .text {
+        padding: 10px;
+        @include border-radius(0 5px 5px 0);
+        border: 1px solid #777777;
+      }
+
+      .options {
+        .icons {
+          padding: 10px;
+          // height: 20px;
+        }
+
+        .set-done-goal {
+          background-image: url('../img/done.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        .delete-goal {
+          background-image: url('../img/delete.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+
+    .comments{
+      font-size: 0.8em;
+      padding:3px;
+      border-bottom: 1px solid #aaa;
+      border-left: 1px solid #aaa;
+      border-right: 1px solid #aaa;
+      .author{
+        text-decoration: underline;
+        padding: 5px;
+      }
+      .comment-text{
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        padding: 5px;
+      }
+      .comment-date{
+        font-style: italic;
+        padding: 5px;
+      }
+    }
+    .comments:last-child{
+      @include border-radius(0 0 5px 5px);
+    }
+    .comments:first-child{
+      border-top: 0;
+    }
+  }
+
+
+  md-tab-item{
+    background-color: $sidenav-toolbar-bg;
+    color: #0A3173;
+  }
+
+  .new-goal{
+    border-top: 1px solid #aaa;
+    margin: 50px 0 0;
+    padding: 10px;
+  }
+}

@@ -5,7 +5,7 @@
     "startdev": "gulp resetdist && gulp startdev"
   },
   "config": {
-    "destdir": "./public/dist"
+    "destdir": "./public/"
   },
   "dependencies": {
     "angular": "^1.3.17",
@@ -14,19 +14,25 @@
     "angular-material": "^0.11.4",
     "angular-material-icons": "^0.6.0",
     "angular-messages": "^1.4.8",
+    "angular-translate": "^2.9.1",
     "angular-ui-router": "^0.2.15",
-    "gulp-sass": "^2.2.0"
+    "gulp-cache": "^0.4.2",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^2.2.0",
+    "imagemin": "^4.0.0",
+    "run-sequence": "^1.1.5"
   },
   "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-angular-filesort": "^1.1.1",
+    "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.3.0",
     "gulp-watch": "^4.3.5",
     "http-server": "0.8.0",
-    "gulp-clean": "^0.3.1",
     "laravel-elixir": "*"
   }
 }
