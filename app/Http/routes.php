@@ -46,8 +46,6 @@ Route::group(
             Route::post('/createshortgoal','Api\GoalController@saveShortGoal');
             Route::post('/editshortgoal','Api\GoalController@editShortGoal');
             
-
-            
         }
 );
 

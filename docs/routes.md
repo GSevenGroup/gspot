@@ -1,4 +1,3 @@
-
 # Routes
 ##Lists
 
@@ -119,7 +118,7 @@
           "assigned_id": 2,   <-- userid
           "suggest_id": 2, 
           "category_id": 2,  
-          "goal_date": "2015–05–12 21:00:00",   <-- the date when the user set the goal after sketch it should be changed, we should figure out the dateformat
+          "goal_date": "2015–05–12 21:00:00",   <-- the date when the user set the goal after sketch the goal should be changed, we should figure out the dateformat
         }
 ```	
 ###Short Goal:
@@ -141,7 +140,7 @@
 ###Group:
 | Name | URL | Method | Comment|Permissions|
 | --- | 
-|edit groups | api/editshortgoal | POST | edit a group	id <- group id  required |admin,mentor|
+|edit groups | api/editgroup | POST | edit a group	id <- group id  required |admin,mentor|
 ```			
 {
 			"id":1,

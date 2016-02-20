@@ -33,8 +33,8 @@ class UserMiddleware
                return $next($request);
            }            
        }
-        
-        if( $assigned_id !== null && $suggest_id !== null && intval($suggest_id) ===0){
+        if( $assigned_id !== null &&( $suggest_id === null || ($suggest_id !== null && intval($suggest_id) ===0))){ 
+              
             if(intval(User::find(Authorizer::getResourceOwnerId())->id) !==intval($assigned_id)){
                 return response("You don't have access to this content",403 );
             }
