@@ -23,7 +23,6 @@ class CreateShorttermGoalsTable extends Migration {
             $table->integer('review_status_id')->unsigned();
             $table->integer('status_id')->unsigned();
             $table->integer('goal_id')->unsigned();
-            $table->foreign('suggest_id')->references('id')->on('users');
             $table->foreign('assigned_id')->references('id')->on('users');
             $table->foreign('week_id')->references('id')->on('weeks');
             $table->foreign('review_status_id')->references('id')->on('review_statuses');
