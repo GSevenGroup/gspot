@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Validator;
+use \Authorizer;
 use Illuminate\Http\Request;
 use  \App\Models\User;
 use  \App\Models\LongtermGoal;
@@ -131,4 +132,85 @@ class GoalController extends Controller {
         
         return response('success',200);
     }
+    public function editShortGoal(Request $request){
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'sketch' => 'boolean',
+            'assigned_id' => 'required|integer',
+            'suggest_id' => 'integer',
+            'week_id' => 'integer',
+            'goal_id' => 'integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        
+        $goal = ShorttermGoal::find($request->input('id'));
+        if($request->input('goal')!==null){
+            $goal->goal= $request->input('goal');
+        }
+        
+        if($request->input('sketch')!==null){
+            $goal->sketch= $request->input('sketch');
+        }
+         
+        if($request->input('assigned_id')!==null){
+            $goal->assigned_id= $request->input('assigned_id');
+        }
+        if($request->input('suggest_id')!==null){
+            $goal->suggest_id= $request->input('suggest_id');
+        }
+        if($request->input('week_id')!==null){
+            $goal->week_id= $request->input('week_id');
+        }
+        
+        if($request->input('goal_id')!==null){
+            $goal->goal_id= $request->input('goal_id');
+        }
+        
+        $goal->save();
+        return response('success',200);
+        
+        }
+
+    public function editLongGoal(Request $request){
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'sketch' => 'boolean',
+            'assigned_id' => 'required|integer',
+            'suggest_id' => 'integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        
+        $goal = LongtermGoal::find($request->input('id'));
+        if($request->input('goal')!==null){
+            $goal->goal= $request->input('goal');
+        }
+        
+        if($request->input('sketch')!==null){
+            $goal->sketch= $request->input('sketch');
+        }
+         
+        if($request->input('assigned_id')!==null){
+            $goal->assigned_id= $request->input('assigned_id');
+        }
+        if($request->input('suggest_id')!==null){
+            $goal->suggest_id= $request->input('suggest_id');
+        }
+        if($request->input('category_id')!==null){
+            $goal->category_id= $request->input('category_id');
+        }
+        
+        if($request->input('goal_date')!==null){
+            $goal->goal_date= $request->input('goal_date');
+        }
+        
+        $goal->save();
+        return response('success',200);
+        
+        }
 }

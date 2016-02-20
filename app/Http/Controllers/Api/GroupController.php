@@ -33,4 +33,28 @@ class GroupController extends Controller {
         
         return response('success',200);
     }
+    public function editGroup(Request $request){
+        
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'mentor' => 'integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        
+        $group = Group::find($request->input('id'));
+        if($request->input('name')!==null){
+            $group->name= $request->input('name');
+        }
+        
+        if($request->input('mentor')!==null){
+            $group->mentor= $request->input('mentor');
+        }
+         
+        $group->save();
+        return response('success',200);
+        
+        }
 }
