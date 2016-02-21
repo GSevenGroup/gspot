@@ -33,8 +33,8 @@
 
 ###Long Goal:
 | Name | URL | Method | Comment | Permissions |
-|---|---|---|---|
-| create long term goal | api/createlonggoal | POST || user,admin,mentor|
+|---|---|---|---|---|
+| create long term goal | api/createlonggoal | POST |  | user,admin,mentor|
 ```php
 {
           "goal": "ccccccccccccccccccccccccccccccccc",
@@ -63,7 +63,7 @@
 
 ###Group:
 | Name | URL | Method | Comment | Permission |
-|---|---|---|---|
+|---|---|---|---|---|
 | create group | api/addgroup | POST ||admin|
 ```php		
 {
