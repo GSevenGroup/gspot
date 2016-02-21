@@ -8,6 +8,7 @@
 | list weeks | api/weeks | POST |it gives back the weeks for a group|"group_id": 1|user,admin,mentor|
 | list long term goals | api/longgoals | POST |it gives back the long term gaols and the comments  of a group|"group_id": 1|user,admin,mentor|
 | list short term goals | api/shortgoals| POST |it gives back the short term gaols and the comments  of a group|"group_id": 1|user,admin,mentor|
+| user | api/user | GET | returns user |
 
 
 
