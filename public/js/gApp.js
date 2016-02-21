@@ -412,7 +412,7 @@ app.controller('MyLGoalsCtrl', ['$scope', '$mdToast', function($scope, $mdToast)
 		if($scope.ltgModel.goal && $scope.ltgModel.category_id){
 			$scope.ltgModel.assigned_id = $scope.user.id;
 			$scope.ltgModel.sketch = 0;
-			$scope.ltgModel.suggest_id = $scope.user.id;
+			$scope.ltgModel.suggest_id = 0;
 			$scope.ltgModel.goal_date = "2016";
 			$scope.errorValidatingNewGoal = false;
 		} else {
