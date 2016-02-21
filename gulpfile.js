@@ -130,7 +130,10 @@ function copyThirdParty() {
     'node_modules/angular-material/angular-material.css',
     'node_modules/angular-material-icons/angular-material-icons.css',
     'node_modules/angular-translate/dist/angular-translate.min.js',
-    'otherThirdParty/angular-translate-loader-static-files.min.js'
+    'otherThirdParty/angular-translate-loader-static-files.min.js',
+    'node_modules/moment/moment.js',
+    'otherThirdParty/underscore-min.js',
+    'node_modules/ngstorage/ngStorage.min.js'
   ])
     .pipe(gulp.dest(publiclib));
 }
@@ -148,7 +151,10 @@ function copyThirdPartyDev() {
     'node_modules/angular-material/angular-material.css',
     'node_modules/angular-material-icons/angular-material-icons.css',
     'node_modules/angular-translate/dist/angular-translate.min.js',
-    'otherThirdParty/angular-translate-loader-static-files.min.js'
+    'node_modules/moment/moment.js',
+    'otherThirdParty/angular-translate-loader-static-files.min.js',
+    'otherThirdParty/underscore-min.js',
+    'node_modules/ngstorage/ngStorage.min.js'
   ])
     .pipe(gulp.dest(publiclib));
 }

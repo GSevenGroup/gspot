@@ -1,4 +1,6 @@
-var app = angular.module('gApp', ['ui.router', 'pascalprecht.translate' ,'ngMaterial', 'ngMdIcons']);
+var app = angular.module('gApp', [
+	'ui.router', 'pascalprecht.translate' ,'ngMaterial', 'ngMdIcons', 'ngStorage'
+]);
 
 app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', function($urlRouterProvider, $stateProvider, $translateProvider){
 
@@ -9,7 +11,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', functi
 		.state('home', {
 			url: '/',
 			templateUrl: '../tpl/home.tpl',
-			controller: 'HomeCtrl'
+			controller: 'MainCtrl'
 		})
 		.state('register', {
 			url: '/register',
@@ -21,13 +23,18 @@ app.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', functi
 			templateUrl: '../tpl/mygseven.tpl',
 			controller: 'MyGSevenCtrl',
 			params: {
-				autoActivateChild: 'myg7.mygoals'
+				autoActivateChild: 'myg7.mysgoals'
 			}
 		})
-		.state('myg7.mygoals', {
-			url: '/mygoals',
-			templateUrl: '../tpl/mygoals.tpl',
-			controller: 'MyGoalsCtrl'
+		.state('myg7.mysgoals', {
+			url: '/mysgoals',
+			templateUrl: '../tpl/mysgoals.tpl',
+			controller: 'MySGoalsCtrl'
+		})
+		.state('myg7.mylgoals', {
+			url: '/mylgoals',
+			templateUrl: '../tpl/mylgoals.tpl',
+			controller: 'MyLGoalsCtrl'
 		});
 
 	// translating

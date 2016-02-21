@@ -21,6 +21,9 @@
         <script src="lib/angular-material.js"></script>
         <script src="lib/angular-material-icons.js"></script>
         <script src="lib/angular-translate.min.js"></script>
+        <script src="lib/ngStorage.min.js"></script>
+        <script src="lib/underscore-min.js"></script>
+        <script src="lib/moment.js"></script>
         <script src="lib/angular-translate-loader-static-files.min.js"></script>
         <script src="js/gApp.js"></script>
 

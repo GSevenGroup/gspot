@@ -26,7 +26,8 @@
                 <!--</div>-->
               <!--</div>-->
             <!--</li>-->
-            <li class="menuitems" ui-sref=".mygoals" ui-sref-active="active">{{ 'MENU_MYGOALS' | translate }}</li>
+            <li class="menuitems" ui-sref=".mysgoals" ui-sref-active="active">{{ 'MENU_MYSGOALS' | translate }}</li>
+            <li class="menuitems" ui-sref=".mylgoals" ui-sref-active="active">{{ 'MENU_MYLGOALS' | translate }}</li>
             <li class="menuitems" ui-sref=".mymeetings" ui-sref-active="active">{{ 'MENU_MYMEETINGS' | translate }}</li>
             <li class="menuitems" ui-sref=".mygroup" ui-sref-active="active">{{ 'MENU_MYGROUP' | translate }}</li>
           </ul>

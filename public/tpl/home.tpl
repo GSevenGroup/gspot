@@ -1,4 +1,4 @@
-<div id="home" ng-controller="MainCtrl">
+<div id="home" ng-controller="HomeCtrl">
 
   <ng-include src="'./tpl/header_main.tpl'"></ng-include>
 
@@ -62,13 +62,13 @@
         </md-card-title>
         <md-content>
           <md-input-container md-no-float class="md-block">
-            <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+            <input ng-model="loginUser.username" type="email" placeholder="Email (required)" ng-required="true">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
-            <input ng-model="user.pwd" type="password" placeholder="Password (required)" ng-required="true">
+            <input ng-model="loginUser.password" type="password" placeholder="Password (required)" ng-required="true">
           </md-input-container>
           <div class="submit">
-            <md-button class="gButton block-center" style="display:block;" ng-click="loginUser()">{{ 'LOGIN_LOGIN' | translate }}</md-button>
+            <md-button class="gButton block-center" style="display:block;" ng-click="login()">{{ 'LOGIN_LOGIN' | translate }}</md-button>
           </div>
 
           <div ng-show="errorLogin">
