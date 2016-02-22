@@ -10,6 +10,10 @@
 | list short term goals | api/shortgoals| POST |it gives back the short term gaols and the comments  of a group|"group_id": 1|user,admin,mentor|
 | get user| api/user| GET |it gives back the user||user,admin,mentor|
 
+criterias needed for listing ltg and stg:
+* week_id not required
+* group_id MANDATORY everywhere
+* LTG: user_id not required
 
 
 ##Creates
