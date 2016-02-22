@@ -13,7 +13,7 @@
         <base href="/">    
     </head>
     <body ng-app="myapp">
-		bbbb
+		<div ui-view></div>
         <script src="dist/lib/angular.js"></script>
         <script src="dist/lib/angular-ui-router.js"></script>
         <script src="dist/lib/angular-aria.js"></script> 

@@ -1,3 +1,8 @@
 /vendor
 /node_modules
 .env
+
+frontend/node_modules/
+frontend/.idea/
+app/node_modules/
+.idea/
