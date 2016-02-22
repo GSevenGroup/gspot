@@ -8,7 +8,6 @@ var ngAnnotate = require('gulp-ng-annotate');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
 var clean = require('gulp-clean');
-var sass = require('gulp-sass');
 
 var appdist = "./frontend/app/js";
 
@@ -16,13 +15,6 @@ elixir(function(mix) {
     mix.less('app.less');
 });
 
-/**
- *  compile sass task
- */
-gulp.task('sass', function () {
-    return gulp.src('app/scss/**/*.scss')
-      .pipe(sass())
-});
 
 gulp.task('start', [ 'build:js', 'copy:thirdparty', 'copy:html', 'copy:templates', 'copy:css']);
 gulp.task('startdev', [ 'builddev:js', 'copy:thirdpartydev', 'copy:html', 'copy:templates', 'copy:css']);

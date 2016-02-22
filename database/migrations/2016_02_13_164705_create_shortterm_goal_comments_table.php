@@ -17,11 +17,10 @@ class CreateShorttermGoalCommentsTable extends Migration {
             $table->increments('id');
             $table->string('message');
             $table->boolean('comment_type');
-            $table->date('comment_date');
             $table->integer('user_id')->unsigned();
             $table->integer('goal_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('goal_id')->references('id')->on('longterm_goals');
+            $table->foreign('goal_id')->references('id')->on('shortterm_goals');
 			$table->timestamps();
 		});
 	}

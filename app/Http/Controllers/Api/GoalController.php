@@ -213,4 +213,48 @@ class GoalController extends Controller {
         return response('success',200);
         
         }
+    
+
+    
+    public function addShortGoalComment(Request $request){
+        $validator = Validator::make($request->all(), [
+            'message' => 'required',
+            'comment_type' => 'required',
+            'goal_id' => 'required|integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        	
+        $comment = new \App\Models\ShorttermGoalComment();
+        $comment->message= $request->input('message');
+        $comment->comment_type= $request->input('comment_type');
+        $comment->user_id = Authorizer::getResourceOwnerId();
+        $comment->goal_id = $request->input('goal_id');
+        $comment->save();
+        
+        return response('success',200);
+    }
+    
+    public function addLongGoalComment(Request $request){
+        $validator = Validator::make($request->all(), [
+            'message' => 'required',
+            'comment_type' => 'required',
+            'goal_id' => 'required|integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        	
+        $comment = new \App\Models\LongtermGoalComment();
+        $comment->message= $request->input('message');
+        $comment->comment_type= $request->input('comment_type');
+        $comment->user_id = Authorizer::getResourceOwnerId();
+        $comment->goal_id = $request->input('goal_id');
+        $comment->save();
+        
+        return response('success',200);
+    }
 }
