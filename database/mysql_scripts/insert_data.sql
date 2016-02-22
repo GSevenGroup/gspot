@@ -84,9 +84,9 @@ INSERT INTO shortterm_goals (sketch,goal,suggest_id,assigned_id,week_id,review_s
 (true,'bbbbbbbbbbbbbbbbbbbbb',0,2,1,2,3,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
 
 -- Create SHORT TERM  GOAL Comments  CONNTENTION--
-INSERT INTO shortterm_goal_comments (message,comment_type,comment_date,user_id,goal_id, created_at, updated_at ) VALUES
-('aaaa',true,'2016-01-24',1,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
+INSERT INTO shortterm_goal_comments (message,comment_type,user_id,goal_id, created_at, updated_at ) VALUES
+('aaaa',true,1,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
 
 -- Create LONG TERM  GOAL Comments  CONNTENTION--
-INSERT INTO longterm_goal_comments (message,comment_type,comment_date,user_id,goal_id, created_at, updated_at ) VALUES
-('bbbb',true,'2016-01-24',2,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');
+INSERT INTO longterm_goal_comments (message,comment_type,user_id,goal_id, created_at, updated_at ) VALUES
+('bbbb',true,2,1, '2015–05–12 21:00:00', '0000–00–00 00:00:00');

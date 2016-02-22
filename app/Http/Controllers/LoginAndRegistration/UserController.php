@@ -22,8 +22,6 @@ class UserController extends Controller {
             'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required',
-            'user_group' => 'required|integer',
-            'level' => 'required',
             'country' => 'required',
             'city' => 'required',
             'address' => 'required',
@@ -38,8 +36,8 @@ class UserController extends Controller {
         $user = new User();
         $user->name= $request->input('name');
         $user->email= $request->input('email');
-        $user->user_group= $request->input('user_group');
-        $user->level= $request->input('level');
+        $user->user_group= 0;
+        $user->level= 0;
         $user->country= $request->input('country');
         $user->city= $request->input('city');
         $user->address= $request->input('address');
@@ -50,6 +48,39 @@ class UserController extends Controller {
         
         return response('success',200);
     }
+    
+    public function editUserGroup(Request $request){
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'user_group' => 'required|integer',
+        ]);
+        
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+        }
+        
+        $user = User::find($request->input('id'));
+        $user->user_group= $request->input('user_group');
+        $user->save();
+        return response('success',200);
+    }
+    
+    public function editUserLevel(Request $request){
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'level' => 'required|integer',
+        ]);
+        
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        
+        $user = User::find($request->input('id'));
+        $user->level= $request->input('level');
+        $user->save();
+        return response('success',200);
+    }
+    
     public function editUser(Request $request){
         $validator = Validator::make($request->all(), [
             'email' => 'unique:users',

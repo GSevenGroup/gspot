@@ -8,6 +8,7 @@
 | list weeks | api/weeks | POST |it gives back the weeks for a group|"group_id": 1|user,admin,mentor|
 | list long term goals | api/longgoals | POST |it gives back the long term gaols and the comments  of a group|"group_id": 1|user,admin,mentor|
 | list short term goals | api/shortgoals| POST |it gives back the short term gaols and the comments  of a group|"group_id": 1|user,admin,mentor|
+| get user| api/user| GET |it gives back the user||user,admin,mentor|
 
 
 
@@ -45,6 +46,16 @@
           "goal_date": "2015–05–12 21:00:00",   <-- the date when the user set the goal after sketch it should be changed, we should figure out the dateformat
         }
 ```
+| Name | URL | Method | Comment|Permissions|
+| --- | 
+| create comment | api/addlonggoalcomment | POST | the comment type means that is it a mentor comment or a normal| user,admin,mentor|
+```json	
+{
+            'message' => 'aaaaaaaaaa',
+            'comment_type' => 0,
+            'goal_id' => 2,
+        }
+```
 ###Short Goal:
 | Name | URL | Method | Comment|Permissions|
 | --- | 
@@ -60,7 +71,16 @@
         }
 		
 ```
-
+| Name | URL | Method | Comment|Permissions|
+| --- | 
+| create comment | api/addshortgoalcomment | POST | the comment type means that is it a mentor comment or a normal| user,admin,mentor|
+```json	
+{
+            'message' => 'aaaaaaaaaa',
+            'comment_type' => 0,
+            'goal_id' => 2,
+        }
+```
 ###Group:
 | Name | URL | Method | Comment|Permission|
 | --- | 
@@ -103,6 +123,25 @@
         "city" => "requaaa",
         "address" => "aaaa",
         "phone" => "111111",
+}
+```	
+
+| Name | URL | Method | Comment|Permissions|
+| --- | 
+| append group to user| api/editusergroup | POST | |admin|
+```json	
+{
+        'id' => 1,
+        'user_group' => 1,
+}
+```	
+| Name | URL | Method | Comment|Permissions|
+| --- | 
+| change user level | api/edituserlevel | POST |if a user paying he is in level 1 or above else 0 |admin|
+```json	
+{
+            'id' => 1,
+            'level' => 0,
 }
 ```	
 
