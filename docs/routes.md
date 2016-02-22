@@ -14,6 +14,7 @@ criterias needed for listing ltg and stg:
 * week_id not required
 * group_id MANDATORY everywhere
 * LTG: user_id not required
+* LTG year not req
 
 
 ##Creates
