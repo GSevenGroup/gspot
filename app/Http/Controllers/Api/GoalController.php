@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Validator;
+use \Authorizer;
 use Illuminate\Http\Request;
 use  \App\Models\User;
 use  \App\Models\LongtermGoal;
@@ -128,6 +129,131 @@ class GoalController extends Controller {
         $goal->status_id = 1;
         $goal->goal_id = $request->input('goal_id');
         $goal->save();
+        
+        return response('success',200);
+    }
+    public function editShortGoal(Request $request){
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'sketch' => 'boolean',
+            'assigned_id' => 'required|integer',
+            'suggest_id' => 'integer',
+            'week_id' => 'integer',
+            'goal_id' => 'integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        
+        $goal = ShorttermGoal::find($request->input('id'));
+        if($request->input('goal')!==null){
+            $goal->goal= $request->input('goal');
+        }
+        
+        if($request->input('sketch')!==null){
+            $goal->sketch= $request->input('sketch');
+        }
+         
+        if($request->input('assigned_id')!==null){
+            $goal->assigned_id= $request->input('assigned_id');
+        }
+        if($request->input('suggest_id')!==null){
+            $goal->suggest_id= $request->input('suggest_id');
+        }
+        if($request->input('week_id')!==null){
+            $goal->week_id= $request->input('week_id');
+        }
+        
+        if($request->input('goal_id')!==null){
+            $goal->goal_id= $request->input('goal_id');
+        }
+        
+        $goal->save();
+        return response('success',200);
+        
+        }
+
+    public function editLongGoal(Request $request){
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'sketch' => 'boolean',
+            'assigned_id' => 'required|integer',
+            'suggest_id' => 'integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        
+        $goal = LongtermGoal::find($request->input('id'));
+        if($request->input('goal')!==null){
+            $goal->goal= $request->input('goal');
+        }
+        
+        if($request->input('sketch')!==null){
+            $goal->sketch= $request->input('sketch');
+        }
+         
+        if($request->input('assigned_id')!==null){
+            $goal->assigned_id= $request->input('assigned_id');
+        }
+        if($request->input('suggest_id')!==null){
+            $goal->suggest_id= $request->input('suggest_id');
+        }
+        if($request->input('category_id')!==null){
+            $goal->category_id= $request->input('category_id');
+        }
+        
+        if($request->input('goal_date')!==null){
+            $goal->goal_date= $request->input('goal_date');
+        }
+        
+        $goal->save();
+        return response('success',200);
+        
+        }
+    
+
+    
+    public function addShortGoalComment(Request $request){
+        $validator = Validator::make($request->all(), [
+            'message' => 'required',
+            'comment_type' => 'required',
+            'goal_id' => 'required|integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        	
+        $comment = new \App\Models\ShorttermGoalComment();
+        $comment->message= $request->input('message');
+        $comment->comment_type= $request->input('comment_type');
+        $comment->user_id = Authorizer::getResourceOwnerId();
+        $comment->goal_id = $request->input('goal_id');
+        $comment->save();
+        
+        return response('success',200);
+    }
+    
+    public function addLongGoalComment(Request $request){
+        $validator = Validator::make($request->all(), [
+            'message' => 'required',
+            'comment_type' => 'required',
+            'goal_id' => 'required|integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        	
+        $comment = new \App\Models\LongtermGoalComment();
+        $comment->message= $request->input('message');
+        $comment->comment_type= $request->input('comment_type');
+        $comment->user_id = Authorizer::getResourceOwnerId();
+        $comment->goal_id = $request->input('goal_id');
+        $comment->save();
         
         return response('success',200);
     }

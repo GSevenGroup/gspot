@@ -14,8 +14,7 @@ class UserController extends Controller {
         return response(User::find(Authorizer::getResourceOwnerId()),200);
     }
     public function getUsers(Request $request){
-        //return response(User::all(),200);
-        return response('TODO',206);
+        return response(User::all(),200);
     }
     
     public function addUser(Request $request){
@@ -23,8 +22,6 @@ class UserController extends Controller {
             'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required',
-            'user_group' => 'required|integer',
-            'level' => 'required',
             'country' => 'required',
             'city' => 'required',
             'address' => 'required',
@@ -39,8 +36,8 @@ class UserController extends Controller {
         $user = new User();
         $user->name= $request->input('name');
         $user->email= $request->input('email');
-        $user->user_group= $request->input('user_group');
-        $user->level= $request->input('level');
+        $user->user_group= 0;
+        $user->level= 0;
         $user->country= $request->input('country');
         $user->city= $request->input('city');
         $user->address= $request->input('address');
@@ -51,5 +48,80 @@ class UserController extends Controller {
         
         return response('success',200);
     }
-
+    
+    public function editUserGroup(Request $request){
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'user_group' => 'required|integer',
+        ]);
+        
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+        }
+        
+        $user = User::find($request->input('id'));
+        $user->user_group= $request->input('user_group');
+        $user->save();
+        return response('success',200);
+    }
+    
+    public function editUserLevel(Request $request){
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
+            'level' => 'required|integer',
+        ]);
+        
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        
+        $user = User::find($request->input('id'));
+        $user->level= $request->input('level');
+        $user->save();
+        return response('success',200);
+    }
+    
+    public function editUser(Request $request){
+        $validator = Validator::make($request->all(), [
+            'email' => 'unique:users',
+        ]);
+    
+        if ($validator->fails()) {
+            return response($validator->errors(),406 );
+         }
+        
+        $user = User::find(Authorizer::getResourceOwnerId());
+        if($request->input('name')!==null){
+            $user->name= $request->input('name');
+            }
+        
+        if($request->input('email')!==null){
+            $user->email= $request->input('email');
+        }
+         
+        if($request->input('country')!==null){
+            $user->country= $request->input('country');
+        }
+        if($request->input('city')!==null){
+            $user->city= $request->input('city');
+        }
+        if($request->input('address')!==null){
+            $user->address= $request->input('address');
+        }
+        
+        if($request->input('phone')!==null){
+            $user->phone= $request->input('phone');
+        }
+        if($request->input('landing_page')!==null){
+            $user->landing_page= $request->input('landing_page');
+        }
+         
+        if($request->input('password')!==null){
+            $user->password = \Illuminate\Support\Facades\Hash::make($request->input('password'));
+        }
+        
+        $user->save();
+        return response('success',200);
+        
+        }
 }
