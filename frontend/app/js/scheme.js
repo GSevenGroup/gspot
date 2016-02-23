@@ -35,6 +35,12 @@ var schemes = {
     "goal_date": ""
   },
 
+  "comment":{
+    "message": "",
+    "comment_type": 0,
+    "goal_id": undefined
+  },
+
   "group": {
     "mentor": undefined,
     "name": ""

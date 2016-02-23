@@ -20,7 +20,14 @@
             <div class="options" flex="10">
               <div class="set-done-goal icons"></div>
               <div class="delete-goal icons"></div>
+              <div class="add-comment icons" ng-click="toggleCommentAdding(g.goal.id)"></div>
             </div>
+          </div>
+          <div layout="row" class="add-comment" ng-show="isCommentOpen[g.goal.id]">
+            <md-input-container class="md-block">
+              <input ng-model="newComments[g.goal.id].message" type="text" placeholder="Add a new comment" ng-required="false">
+            </md-input-container>
+            <md-button ng-click="addComment(g.goal.id)">{{ 'ADD_COMMENT' | translate }}</md-button>
           </div>
           <div layout="row" ng-repeat="comment in g.comments">
             <div flex="10"></div>
@@ -41,8 +48,8 @@
           <md-input-container md-no-float flex="20">
             <label>{{ 'GOAL_LSELECT' | translate}}</label>
             <md-select ng-model="stgModel.goal_id" ng-change="validateNewGoal()">
-              <md-option value="{{ longtg.longtermgoals.id }}" ng-model="stgModel.category_id" ng-repeat="longtg in getLTGPerPerson(user.id)">
-                {{ longtg.longtermgoals.goal }}
+              <md-option value="{{ longtg.goal_id }}" ng-model="stgModel.goal_id" ng-repeat="longtg in getLTGPerPerson(user.id)">
+                {{ longtg.goal }}
               </md-option>
             </md-select>
           </md-input-container>

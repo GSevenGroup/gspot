@@ -61,6 +61,8 @@
   "GOAL_DELETED": "New goal added!",
   "GOAL_ADD_ERROR": "Please make sure you have selected a category and written a detailed description!",
 
+  "ADD_COMMENT": "Add comment",
+
   "CAT_HEALTH": "Health",
   "CAT_MONEY": "Money",
   "CAT_PEOPLE": "People",

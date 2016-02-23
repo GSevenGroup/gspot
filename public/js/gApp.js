@@ -29,6 +29,12 @@ var requests = {
   "create_week":{
     "route": api + "/api/addweek"
   },
+  "create_ltg_comment":{
+    "route": api + "/api/addlonggoalcomment"
+  },
+  "create_stg_comment":{
+    "route": api + "/api/addshortgoalcomment"
+  },
   "create_group":{
     "route": api + "/api/addgroup"
   },
@@ -87,6 +93,12 @@ var schemes = {
     "suggest_id": undefined,
     "category_id": undefined,
     "goal_date": ""
+  },
+
+  "comment":{
+    "message": "",
+    "comment_type": 0,
+    "goal_id": undefined
   },
 
   "group": {
@@ -344,6 +356,9 @@ app.controller('MyLGoalsCtrl', ['$scope', '$mdToast', function($scope, $mdToast)
 
 	$scope.categoriesInNumber = [1, 2, 3, 4, 5];
 
+	$scope.isCommentOpen = {};
+	$scope.newComments = {};
+
 	$scope.getLTG = function() {
 		$scope.http(
 			requests.list_longgoals.route,
@@ -351,8 +366,31 @@ app.controller('MyLGoalsCtrl', ['$scope', '$mdToast', function($scope, $mdToast)
 			{"group_id": $scope.user.user_group},
 			function (d) {
 				$scope.ltg = d.data;
+				_.each($scope.ltg, function(v){
+					_.each(v.longtermgoals, function(w){
+						$scope.newComments[w.goal.id] =  angular.copy(schemes.comment);
+						$scope.newComments[w.goal.id].goal_id = w.goal.id;
+						$scope.isCommentOpen[w.goal.id] = false;
+					});
+				});
 			}
 		);
+	};
+
+	$scope.toggleCommentAdding = function(id){
+		$scope.isCommentOpen[id] = !$scope.isCommentOpen[id];
+	};
+
+	$scope.addComment = function(id){
+		$scope.http(
+			requests.create_ltg_comment.route,
+			'POST',
+			$scope.newComments[id],
+			function(d){
+				$scope.goalsUpdated();
+				// $scope.newCommentAddedToast();
+			}
+		)
 	};
 
 	$scope.editLTG = function(){
@@ -364,10 +402,6 @@ app.controller('MyLGoalsCtrl', ['$scope', '$mdToast', function($scope, $mdToast)
 	};
 
 	$scope.setLTGStatus = function(b){
-
-	};
-
-	$scope.commentOnLTG = function(){
 
 	};
 
@@ -431,6 +465,9 @@ app.controller('MySGoalsCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.actWeek = undefined;
 	$scope.weeks = {};
 
+	$scope.isCommentOpen = {};
+	$scope.newComments = {};
+
 	$scope.stgModel = schemes.sGoal;
 
 	$scope.getSTG = function(){
@@ -440,6 +477,13 @@ app.controller('MySGoalsCtrl', ['$scope', '$http', function($scope, $http){
 			{	"group_id": $scope.user.user_group },
 			function(d){
 				$scope.stgAll = d.data;
+				_.each($scope.stgAll, function(v){
+					_.each(v.shorttermgoals, function(w){
+						$scope.newComments[w.goal.id] = angular.copy(schemes.comment);
+						$scope.newComments[w.goal.id].goal_id = w.goal.id;
+						$scope.isCommentOpen[w.goal.id] = false;
+					});
+				});
 			}
 		);
 	};
@@ -478,8 +522,16 @@ app.controller('MySGoalsCtrl', ['$scope', '$http', function($scope, $http){
 
 	};
 
-	$scope.commentOnSTG = function(){
-
+	$scope.addComment = function(id){
+		$scope.http(
+			requests.create_stg_comment.route,
+			'POST',
+			$scope.newComments[id],
+			function(d){
+				$scope.goalsUpdated();
+				// $scope.newCommentAddedToast();
+			}
+		)
 	};
 
 	$scope.goalsUpdated = function(){
@@ -569,6 +621,10 @@ app.controller('MySGoalsCtrl', ['$scope', '$http', function($scope, $http){
 
 	$scope.isSelected = function(id){
 		return ($scope.actWeek === id);
+	};
+
+	$scope.toggleCommentAdding = function(id){
+		$scope.isCommentOpen[id] = !$scope.isCommentOpen[id];
 	};
 
 	//init

@@ -29,6 +29,12 @@ var requests = {
   "create_week":{
     "route": api + "/api/addweek"
   },
+  "create_ltg_comment":{
+    "route": api + "/api/addlonggoalcomment"
+  },
+  "create_stg_comment":{
+    "route": api + "/api/addshortgoalcomment"
+  },
   "create_group":{
     "route": api + "/api/addgroup"
   },

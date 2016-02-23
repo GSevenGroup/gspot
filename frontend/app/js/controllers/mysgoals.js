@@ -6,6 +6,9 @@ app.controller('MySGoalsCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.actWeek = undefined;
 	$scope.weeks = {};
 
+	$scope.isCommentOpen = {};
+	$scope.newComments = {};
+
 	$scope.stgModel = schemes.sGoal;
 
 	$scope.getSTG = function(){
@@ -15,6 +18,13 @@ app.controller('MySGoalsCtrl', ['$scope', '$http', function($scope, $http){
 			{	"group_id": $scope.user.user_group },
 			function(d){
 				$scope.stgAll = d.data;
+				_.each($scope.stgAll, function(v){
+					_.each(v.shorttermgoals, function(w){
+						$scope.newComments[w.goal.id] = angular.copy(schemes.comment);
+						$scope.newComments[w.goal.id].goal_id = w.goal.id;
+						$scope.isCommentOpen[w.goal.id] = false;
+					});
+				});
 			}
 		);
 	};
@@ -53,8 +63,16 @@ app.controller('MySGoalsCtrl', ['$scope', '$http', function($scope, $http){
 
 	};
 
-	$scope.commentOnSTG = function(){
-
+	$scope.addComment = function(id){
+		$scope.http(
+			requests.create_stg_comment.route,
+			'POST',
+			$scope.newComments[id],
+			function(d){
+				$scope.goalsUpdated();
+				// $scope.newCommentAddedToast();
+			}
+		)
 	};
 
 	$scope.goalsUpdated = function(){
@@ -144,6 +162,10 @@ app.controller('MySGoalsCtrl', ['$scope', '$http', function($scope, $http){
 
 	$scope.isSelected = function(id){
 		return ($scope.actWeek === id);
+	};
+
+	$scope.toggleCommentAdding = function(id){
+		$scope.isCommentOpen[id] = !$scope.isCommentOpen[id];
 	};
 
 	//init
